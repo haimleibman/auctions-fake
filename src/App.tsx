@@ -7,7 +7,6 @@ import {
   Redirect
 } from "react-router-dom";
 import Home from './home/Home';
-import Training from './training/Training';
 
 function App() {
   return (
@@ -15,10 +14,10 @@ function App() {
       <Router basename={process.env.PUBLIC_URL}>
           <Switch>
             <Route path="/training" >
-              <Training></Training>
+
             </Route>
             <Route exact path="/" >
-              <Home/>
+              
             </Route>
             <Route exact path="/*" >
               <Redirect to="/" />
