@@ -1,0 +1,112 @@
+.Auction {
+    position: relative;
+    height: 30em;
+    width: -webkit-fill-available;
+    margin: 1em;
+    border-radius: 1em;
+    overflow: auto;
+    
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    position: relative;
+
+    img {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        height: -webkit-fill-available;
+        width: -webkit-fill-available;
+        object-fit: cover;
+    }
+
+    .card {
+        position: absolute;
+        inset: 0;
+        height: -webkit-fill-available;
+        width: -webkit-fill-available;
+        
+        margin: 1em;
+        border-radius: 1.5em;
+
+        transform: rotateY(0deg);
+        transition: 0.5s;
+        transform-style: preserve-3d;
+
+        &.flipped {
+            background-color: rgba(255, 255, 255, 0.267); 
+            transform: rotateY(180deg);
+        }
+            
+        .front, .back {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            height: 100%;
+            width: 100%;
+
+            backface-visibility: hidden;
+            position: absolute;
+
+            > div {
+                background: #4d4d4d94;
+                border-radius: 0.3em;
+                padding: .1em;
+            }
+        }
+
+        .front {
+            z-index: 2;
+            /* firefox 31 */
+            transform: rotateY(0deg);
+
+            > div {
+                margin-block: 2em;
+            }
+
+            .travel {
+                text-align: center;
+                font-size: 40px;
+
+                .range {
+                    font-size: 16px;
+                }
+            }
+
+            .more {
+                padding: .5em 1em;
+                
+                background: #ffffff94;
+                
+                border: 1px solid gray;
+                border-radius: 2em;
+                
+                font-size: 20px;
+
+                transition: all 200ms;
+
+                &:active {
+                    background: #4d4d4d94;
+                }
+            }
+        }
+
+        .back { 
+            transform: rotateY(180deg);
+
+            div {
+                margin-block: .5em;
+            }
+
+            .original {
+                font-size: 20px;
+            }
+
+            .price {
+                background: #4d4d4dc4;
+                font-size: 30px;
+            }
+        }
+    }
+}

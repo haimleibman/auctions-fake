@@ -1,29 +1,23 @@
 import React from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import css from './App.module.scss';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
-} from "react-router-dom";
-import Home from './home/Home';
+import Auction from './auction/Auction';
+import IAuction from './models/auction.model';
 
 function App() {
+  const [auctions, setAuctions] = useState<IAuction[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      const res = await fetch('http://localhost:3001/auctions');
+      setAuctions(await res.json());
+    })();
+  }, [])
+
   return (
     <div className={css.App}>
-      <Router basename={process.env.PUBLIC_URL}>
-          <Switch>
-            <Route path="/training" >
-
-            </Route>
-            <Route exact path="/" >
-              
-            </Route>
-            <Route exact path="/*" >
-              <Redirect to="/" />
-            </Route>
-          </Switch>
-      </Router>
+      {auctions.map((auction: IAuction, i) => <Auction key={i} auction={auction} />)}
     </div>
   );
 }
