@@ -2,6 +2,7 @@
   "name": "weather-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://haimleibman.github.io/auctions-fake",
   "proxy": "https://static.bidflyer.com.s3.amazonaws.com",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
