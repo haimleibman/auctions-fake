@@ -8,17 +8,30 @@
 }
 
 .App {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
   position: fixed;
   inset: 0;
   overflow: auto;
-  
-  max-width: 85em;
-  margin: auto;
-  
+
   background-color: #222229;
   color: white;
+
+  &::-webkit-scrollbar {
+      background: transparent;
+      width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ffffff44;
+    border-radius: 1em;
+  }
+
+  .Container {
+    width: -webkit-fill-available;
+    max-width: 85em;
+    margin: auto;
+    
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  }
 }

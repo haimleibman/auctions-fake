@@ -17,7 +17,9 @@ function App() {
 
   return (
     <div className={css.App}>
+      <div className={css.Container}>
       {auctions.map((auction: IAuction, i) => <Auction key={i} auction={auction} />)}
+      </div>
     </div>
   );
 }
