@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      const res = await fetch('http://localhost:3001/auctions');
+      const res = await fetch('/promotional/test.json');
       setAuctions(await res.json());
     })();
   }, [])
