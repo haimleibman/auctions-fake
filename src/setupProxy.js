@@ -143,5 +143,7 @@ module.exports = function (app) {
     ]
 
     app.use(express.static(path.join(__dirname)));
-    app.get('^/api/auctions', (req, res) => res.send(auctions));
+    app.get('^/api/auctions', (req, res) => {
+    res.send(auctions);
+    })
 };

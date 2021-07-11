@@ -11,11 +11,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  
+
   position: fixed;
   inset: 0;
   overflow: auto;
-
+  
+  max-width: 85em;
+  margin: auto;
+  
   background-color: #222229;
   color: white;
 }
