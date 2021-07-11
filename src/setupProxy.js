@@ -143,8 +143,5 @@ module.exports = function (app) {
     ]
 
     app.use(express.static(path.join(__dirname)));
-    app.get('*/api/auctions', (req, res) => {
-        console.log('hello from api')
-        res.send(auctions);
-    })
+    app.get('^/api/auctions', (req, res) => res.send(auctions));
 };
